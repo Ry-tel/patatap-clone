@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="patatapclone.css">
 	<script type="text/javascript" src="paper-full.js"></script>
 	<script src="howler.js"></script>
@@ -255,26 +256,53 @@ function onKeyDown(event){
 }
 }
 
+//path.fillColor = '#e9e9ff';
+//path.selected = true;
 
-function onFrame(event) {
-	for(var i=0;i<circles.length;i++){
-circles[i].fillColor.hue +=1;
-    circles[i].rotate(4);
-    circles[i].scale(.96);
-    if(circles[i].area < 1){
-	circles[i].remove();
-      circles.splice(i, 1);
-      console.log(circles);
-    }
-	}
-};
+	function onFrame(event) {
+		for(var i=0;i<circles.length;i++){
+      circles[i].fillColor.hue +=1;
+            circles[i].rotate(4);
+            circles[i].scale(.96);
+            if(circles[i].area < 1){
+                circles[i].remove();
+              circles.splice(i, 1);
+              console.log(circles);
+            }
+		}
+	};
+
+
 </script>
+
 	<title>Patatap clone</title>
 
 
 
 </head>
 <body>
-	<canvas id="myCanvas" resize></canvas>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <p><strong>Hello user!</strong> This website is a simple clone of an awesome website patatap.com. It was build using paper.js for animations and howler.js for playing sounds. 
+                    Press any button with a letter on a keyboard to create a circle and play corresponding sound. Numeric key will create a square with sound. The sounds overlaps, 
+                    you can create your own "music" by hitting keys simultaneously. </p>
+                <p class="py-5">
+                <strong class="text-center">**MY ADVISE** turn the volume down; especially if you are using headphones. </strong> 
+                </p>
+                <p>
+                    If you see the circles, but cannot hear the sound give the site 10 seconds to load the mp3s. Close this message and have fun! 
+                </p>
+                <p class="text-right">~Piotr</p>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+        </div>
+    <div class="myContainer">
+
+
+        <canvas id="myCanvas" resize></canvas>
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 </body>
 </html>
